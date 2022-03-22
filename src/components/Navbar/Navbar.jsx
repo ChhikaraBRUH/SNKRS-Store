@@ -26,7 +26,7 @@ const Navbar = () => {
 					<Link className="nav-heading" to={"/wishlist"}>
 						<div className="badge-div">
 							<div className="material-icons-outlined md-36">favorite</div>
-							<span className="badge-icon">5</span>
+							<span className="badge-icon">3</span>
 						</div>
 					</Link>
 				</div>

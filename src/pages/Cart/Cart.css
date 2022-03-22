@@ -1,0 +1,273 @@
+/* Importing Main CSS */
+
+@import "../main.css";
+
+/* Card Container */
+.card-container {
+	background-color: var(--white);
+	padding: var(--space-sm);
+	border-radius: var(--border-rad-lg);
+	width: 20rem;
+}
+
+/* Card Defaults Div */
+.card-default {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
+}
+
+/* Card Header */
+.card-header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
+	position: relative;
+}
+
+/* Card Label */
+.card-label {
+	position: absolute;
+	z-index: 1;
+	left: 4%;
+	top: 4%;
+	background-color: var(--primary-color);
+	color: var(--white);
+	padding: var(--space-xs);
+	border-radius: var(--border-rad-md);
+	font-weight: 600;
+}
+
+/* Card Dismiss Button */
+.card-dismiss-btn {
+	position: absolute;
+	z-index: 1;
+	right: 4%;
+	top: 5%;
+	color: var(--black);
+	cursor: pointer;
+}
+
+/* Card Image Div */
+.card-img-div {
+	position: relative;
+}
+
+/* Card Image */
+.card-img {
+	border-radius: var(--border-rad-lg);
+	width: 18rem;
+}
+
+/* Card Title & Subtitle */
+
+.card-title {
+	color: var(--black);
+}
+
+.card-subtitle {
+	color: var(--gray);
+}
+
+/* Card Description */
+.card-description {
+	color: var(--gray);
+}
+
+/* Card Footer */
+.card-footer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+/* Card Button */
+.card-button {
+	border: none;
+	padding: var(--space-sm);
+	box-shadow: 0 0.5rem 0.5rem -0.5rem var(--black);
+	border-radius: var(--border-rad-sm);
+	text-transform: uppercase;
+	font-family: inherit;
+	font-weight: 500;
+	letter-spacing: 1.2px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	color: var(--black);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-sm);
+	background-color: var(--black);
+	width: 100%;
+}
+
+.card-button a {
+	text-decoration: none;
+	color: var(--white);
+}
+
+/* Hidden Class Element */
+.card-hidden-element {
+	display: none;
+}
+
+/* Card With Text Overlay CSS */
+.card-text-overlay-title-div {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+}
+
+.card-text-overlay-title {
+	color: var(--white);
+}
+
+.card-text-overlay-subtitle {
+	color: var(--white);
+}
+
+/* Card With Shadow */
+.card-shadow {
+	box-shadow: 0 0.5rem 1rem -0.5rem var(--black);
+}
+
+/* Horizontal Card */
+
+.card-horizontal-container {
+	flex-direction: row;
+	width: max-content;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card-horizontal-header {
+	flex-direction: row;
+	align-items: center;
+}
+
+.card-horizontal-img {
+	width: 10rem;
+	height: 10rem;
+}
+
+/* //////////////////////////////////////////////// */
+
+/* Cart Section */
+
+.cart-section {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap-reverse;
+	gap: 2rem;
+	margin: 2rem;
+}
+
+/* Cart Items */
+
+.cart-items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+/* Cart Container */
+
+.cart-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 2rem;
+}
+
+/* Card Wishlist Icon */
+
+.card-dismiss-btn {
+	background-color: var(--white);
+	border-radius: var(--border-rad-full);
+	padding: 0.5rem;
+	transition: all 0.4s ease;
+}
+
+.card-dismiss-btn:hover {
+	color: var(--primary-color);
+}
+
+/* Card Text Div */
+
+.card-horizontal-text-div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-sm);
+}
+
+/* Cart Card Subtitle */
+
+.card-subtitle {
+	font-weight: 400;
+	font-size: 1.2rem;
+}
+
+/* Item Quantity Div */
+
+.item-quantity {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+.item-quantity .material-icons {
+	cursor: pointer;
+}
+
+/* Card Button */
+
+.card-button {
+	background-color: var(--white);
+	border: 2px solid var(--black);
+}
+
+.card-button a {
+	color: var(--black);
+}
+
+/* Card Footer */
+
+.card-footer a {
+	text-decoration: none;
+}
+
+/* Cart Summary Section */
+
+.cart-summary {
+	display: flex;
+	background-color: var(--white);
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin: var(--space-sm);
+	padding: var(--space-sm);
+	border-radius: var(--border-rad-lg);
+	box-shadow: 0 0.5rem 1rem -0.5rem var(--black);
+	height: fit-content;
+}
+
+.cart-summary a {
+	text-decoration: none;
+	width: 100%;
+}
+
+.cart-summary a button {
+	width: 100%;
+	justify-content: center;
+}
+
+.cart-summary-item {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
