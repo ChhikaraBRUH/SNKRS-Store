@@ -3,7 +3,7 @@ import "./Auth.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 
-function Login() {
+const Login = () => {
 	return (
 		<>
 			<Navbar />
@@ -23,7 +23,7 @@ function Login() {
 						</div>
 						<div className='remember-div'>
 							<input type='checkbox' id='remember-me-input' />
-							<label for='remember-me-input'>Remember Me</label>
+							<label htmlFor='remember-me-input'>Remember Me</label>
 						</div>
 						<div className='forgot-pass-div'>
 							<a href='#'>Forgot Password?</a>
@@ -42,6 +42,6 @@ function Login() {
 			</section>
 		</>
 	);
-}
+};
 
 export default Login;
