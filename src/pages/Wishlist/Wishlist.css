@@ -1,0 +1,41 @@
+/* Importing Main CSS */
+
+@import "../main.css";
+
+/* Wishlist Section */
+
+.wishlist-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin: 2rem;
+}
+
+/* Wishlist Container */
+
+.wishlist-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	gap: 2rem;
+}
+
+/* Card Wishlist Icon */
+
+.card-dismiss-btn {
+	background-color: var(--white);
+	border-radius: var(--border-rad-full);
+	padding: 0.5rem;
+	color: var(--primary-color);
+}
+
+/* Wishlist Card Subtitle */
+
+.card-subtitle {
+	font-weight: 400;
+	font-size: 1.2rem;
+}

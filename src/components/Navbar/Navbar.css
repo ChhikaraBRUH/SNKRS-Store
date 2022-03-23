@@ -1,0 +1,67 @@
+/* Navigation Container */
+
+.nav-container {
+	align-items: center;
+	padding: var(--space-sm);
+	flex-wrap: wrap;
+}
+
+/* Search Div */
+
+.search-div {
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--gray);
+	padding: 0.2rem;
+	border-radius: var(--border-rad-lg);
+	max-width: 20rem;
+}
+
+/* Search Input */
+
+.search-input {
+	border: none;
+	outline: none;
+}
+
+/* Search Icon */
+
+.search-icon {
+	cursor: pointer;
+}
+
+/* Right Nav */
+
+.right-nav {
+	align-items: center;
+}
+
+/* Login Button */
+
+.login-btn {
+	padding: 0.25rem;
+	box-shadow: none;
+}
+
+/* Badge Icon */
+
+.badge-div .material-icons {
+	font-size: 2rem;
+}
+
+.badge-icon {
+	background-color: var(--secondary-color);
+	font-size: 0.8rem;
+}
+
+/* Responsiveness */
+
+/* Majority is carried over from Component Library */
+
+/* Hiding Search Bar on smaller screens */
+
+@media only screen and (max-width: 600px) {
+	.search-div {
+		display: none;
+	}
+}
