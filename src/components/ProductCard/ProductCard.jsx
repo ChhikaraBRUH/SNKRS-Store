@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductCard.css";
 
-const ProductCard = ({ title, categoryName, price, img, inStock }) => {
+const ProductCard = ({ title, categoryName, price, img, inStock, rating }) => {
 	return (
 		<div className='card-container'>
 			<div className='card-default'>
@@ -14,7 +14,9 @@ const ProductCard = ({ title, categoryName, price, img, inStock }) => {
 
 					<div className='card-text-div'>
 						<h3 className='card-title'>{title}</h3>
-						<h4 className='card-subtitle'>{categoryName}</h4>
+						<p className='card-subtitle'>
+							{categoryName} | Rating: ({rating}/5)
+						</p>
 					</div>
 				</div>
 
