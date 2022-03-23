@@ -17,12 +17,19 @@
 .auth-container {
 	display: flex;
 	flex-direction: column;
+	gap: 1rem;
 	align-items: center;
 	justify-content: center;
 	border-radius: var(--border-rad-lg);
 	background-color: var(--white);
 	padding: var(--space-md);
 	box-shadow: 0 0.5rem 1rem -0.5rem var(--black);
+}
+
+.auth-container form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 /* Input Container */

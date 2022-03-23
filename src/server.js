@@ -8,11 +8,7 @@ import {
 } from "./backend/controllers/CartController";
 import { getAllCategoriesHandler, getCategoryHandler } from "./backend/controllers/CategoryController";
 import { getAllProductsHandler, getProductHandler } from "./backend/controllers/ProductController";
-import {
-	addItemToWishlistHandler,
-	getWishlistItemsHandler,
-	removeItemFromWishlistHandler,
-} from "./backend/controllers/WishlistController";
+import { addItemToWishlistHandler, getWishlistItemsHandler, removeItemFromWishlistHandler } from "./backend/controllers/WishlistController";
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
