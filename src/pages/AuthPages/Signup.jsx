@@ -12,12 +12,14 @@ const Signup = () => {
 		password: "",
 	});
 	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const { setIsAuth, setToken, navigate } = useAuth();
 
 	const signupHandler = async (e, user) => {
 		e.preventDefault();
 		setError(false);
+		setLoading(true);
 
 		try {
 			const response = await axios.post("/api/auth/signup", user);
@@ -25,10 +27,12 @@ const Signup = () => {
 			localStorage.setItem("token", response.data.encodedToken);
 			setToken(response.data.encodedToken);
 			setIsAuth(true);
+			setLoading(false);
 			navigate("/");
 		} catch (err) {
 			console.error("error", err);
 			setError(true);
+			setLoading(false);
 		}
 	};
 
@@ -73,8 +77,8 @@ const Signup = () => {
 							/>
 						</div>
 						<div className='auth-btn-div'>
-							<button type='submit' className='btn auth-btn'>
-								Sign Up
+							<button type='submit' className='btn auth-btn' disabled={loading}>
+								{loading ? "Signing You Up..." : "Sign Up"}
 							</button>
 						</div>
 					</form>

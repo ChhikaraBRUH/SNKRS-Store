@@ -8,12 +8,14 @@ import axios from "axios";
 const Login = () => {
 	const [user, setUser] = useState({ email: "", password: "" });
 	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const { setIsAuth, setToken, navigate } = useAuth();
 
 	const loginHandler = async (e, user) => {
 		e.preventDefault();
 		setError(false);
+		setLoading(true);
 
 		try {
 			const response = await axios.post("/api/auth/login", user);
@@ -21,10 +23,12 @@ const Login = () => {
 			localStorage.setItem("token", response.data.encodedToken);
 			setToken(response.data.encodedToken);
 			setIsAuth(true);
+			setLoading(false);
 			navigate("/");
 		} catch (err) {
 			console.error("error", err);
 			setError(true);
+			setLoading(false);
 		}
 	};
 
@@ -78,8 +82,8 @@ const Login = () => {
 						</p>
 
 						<div className='auth-btn-div'>
-							<button type='submit' className='btn auth-btn'>
-								Log In
+							<button type='submit' className='btn auth-btn' disabled={loading}>
+								{loading ? "Logging in..." : "Log In"}
 							</button>
 						</div>
 					</form>
