@@ -58,6 +58,13 @@
 	font-size: 0.8rem;
 }
 
+/* Fill Test Credentials */
+
+.test-creds-text {
+	color: var(--secondary-color);
+	cursor: pointer;
+}
+
 /* Forgot Password Div */
 
 .forgot-pass-div {

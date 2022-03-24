@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import Navbar from "../../components/Navbar/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth/authContext";
 import axios from "axios";
 
@@ -11,19 +11,24 @@ const Signup = () => {
 		email: "",
 		password: "",
 	});
-	const { setAuthToken } = useAuth();
-	const navigate = useNavigate();
+	const [error, setError] = useState(false);
+
+	const { setIsAuth, setToken, navigate } = useAuth();
 
 	const signupHandler = async (e, user) => {
 		e.preventDefault();
+		setError(false);
 
 		try {
 			const response = await axios.post("/api/auth/signup", user);
-			setAuthToken(response.data.encodedToken);
+			localStorage.setItem("isAuth", true);
+			localStorage.setItem("token", response.data.encodedToken);
+			setToken(response.data.encodedToken);
+			setIsAuth(true);
 			navigate("/");
 		} catch (err) {
 			console.error("error", err);
-			alert(err);
+			setError(true);
 		}
 	};
 
@@ -33,6 +38,7 @@ const Signup = () => {
 
 			<section className='auth-section'>
 				<div className='auth-container'>
+					{error && <p className='text-error-color text-underline fw-700'>Error Occured. Try Again!</p>}
 					<h3>Sign Up</h3>
 
 					<form onSubmit={(e) => signupHandler(e, user)}>
