@@ -6,9 +6,7 @@ const Sidebar = () => {
 
 	return (
 		<>
-			<button className='btn btn-link sidebar-toggle-btn' onclick='toggleFilters()'>
-				Show Filters
-			</button>
+			<button className='btn btn-link sidebar-toggle-btn'>Show Filters</button>
 			<aside>
 				<div className='filters'>
 					<div className='filter-header'>
@@ -28,7 +26,7 @@ const Sidebar = () => {
 								checked={filterState.sortBy && filterState.sortBy === "LOW_TO_HIGH"}
 								onClick={() => filterDispatch({ type: "SORT", payload: "LOW_TO_HIGH" })}
 							/>
-							<label for='priceLtoH'>Price low to high</label>
+							<label htmlFor='priceLtoH'>Price low to high</label>
 						</div>
 						<div className='filter-input-container'>
 							<input
@@ -38,7 +36,7 @@ const Sidebar = () => {
 								checked={filterState.sortBy && filterState.sortBy === "HIGH_TO_LOW"}
 								onClick={() => filterDispatch({ type: "SORT", payload: "HIGH_TO_LOW" })}
 							/>
-							<label for='priceHtoL'>Price high to low</label>
+							<label htmlFor='priceHtoL'>Price high to low</label>
 						</div>
 
 						<div className='filter-container-title'>Out of Stock</div>
@@ -47,9 +45,9 @@ const Sidebar = () => {
 								type='checkbox'
 								id='outOfStock'
 								checked={filterState.inStockOnly === false}
-								onClick={() => filterDispatch({ type: "SHOW_IN_STOCK_ONLY" })}
+								onChange={() => filterDispatch({ type: "SHOW_IN_STOCK_ONLY" })}
 							/>
-							<label for='outOfStock'>Show Out of Stock</label>
+							<label htmlFor='outOfStock'>Show Out of Stock</label>
 						</div>
 					</div>
 
@@ -61,7 +59,6 @@ const Sidebar = () => {
 							step='1'
 							min='1'
 							max='5'
-							defaultValue='1'
 							value={filterState.rating}
 							id='rating-range'
 							onChange={(e) =>
@@ -87,22 +84,22 @@ const Sidebar = () => {
 								type='checkbox'
 								id='AF1'
 								checked={filterState.airForce1 === true}
-								onClick={() => filterDispatch({ type: "AIR_FORCE_1" })}
+								onChange={() => filterDispatch({ type: "AIR_FORCE_1" })}
 							/>
-							<label for='AF1'>Air Force 1</label>
+							<label htmlFor='AF1'>Air Force 1</label>
 						</div>
 						<div className='filter-input-container'>
 							<input
 								type='checkbox'
 								id='running'
 								checked={filterState.running === true}
-								onClick={() => filterDispatch({ type: "RUNNING" })}
+								onChange={() => filterDispatch({ type: "RUNNING" })}
 							/>
-							<label for='running'>Running</label>
+							<label htmlFor='running'>Running</label>
 						</div>
 						<div className='filter-input-container'>
-							<input type='checkbox' id='sb' checked={filterState.sb === true} onClick={() => filterDispatch({ type: "SB" })} />
-							<label for='sb'>SB</label>
+							<input type='checkbox' id='sb' checked={filterState.sb === true} onChange={() => filterDispatch({ type: "SB" })} />
+							<label htmlFor='sb'>SB</label>
 						</div>
 					</div>
 				</div>

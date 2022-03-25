@@ -122,13 +122,28 @@ aside {
 }
 
 .card-dismiss-btn {
-	background-color: var(--white);
 	border-radius: var(--border-rad-full);
 	padding: 0.5rem;
 }
 
-.card-dismiss-btn:hover {
+/* Card Favorite Wishlist Icon */
+
+#card-fav-icon-notWishlisted {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+#card-fav-icon-notWishlisted:hover {
 	color: var(--primary-color);
+}
+
+#card-fav-icon-wishlisted {
+	background-color: var(--white);
+	color: var(--primary-color);
+}
+
+#card-fav-icon-wishlisted:hover {
+	color: var(--black);
 }
 
 .card-img {

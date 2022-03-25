@@ -1,3 +1,35 @@
 /* Importing Main CSS */
 
 @import "../../pages/main.css";
+
+/* Out Of Stock Card Text */
+
+.card-out-of-stock-img-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-out-of-stock-img-div img {
+	filter: grayscale(85%);
+}
+
+.card-out-of-stock-text {
+	color: var(--white);
+	font-weight: 700;
+	font-size: 1.5rem;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	background-color: var(--primary-color);
+	width: 100%;
+}
+
+/* Out Of Stock Card Button */
+
+#out-of-stock-card-button {
+	cursor: not-allowed;
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+}
