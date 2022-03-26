@@ -2,7 +2,7 @@ import { useCart } from "../../../context/cart/cartContext";
 import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
 const CartCard = ({ product }) => {
-	const { addToCart, removeFromCart, changeCartQty, getCartState, cartState, isItemInCart } = useCart();
+	const { removeFromCart, changeCartQty } = useCart();
 
 	const { addToWishlist, removeFromWishlist, isItemWishlisted } = useWishlist();
 	const itemInWishlist = isItemWishlisted(product);

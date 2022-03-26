@@ -3,8 +3,11 @@ import "./Category.css";
 import { Link } from "react-router-dom";
 import "../../Home.css";
 import { AF1, RUN1, SB1 } from "../../../../assets";
+import { useFilter } from "../../../../context/filter/filterContext";
 
 const Category = () => {
+	const { filterDispatch } = useFilter();
+
 	return (
 		<>
 			<section className='categories-section'>
@@ -31,7 +34,14 @@ const Category = () => {
 
 							<div className='card-footer'>
 								<Link to={"/products"}>
-									<button className='card-button'>Check It Out</button>
+									<button
+										className='card-button'
+										onClick={async () => {
+											await filterDispatch({ type: "CLEAR_ALL" });
+											filterDispatch({ type: "AIR_FORCE_1" });
+										}}>
+										Check It Out
+									</button>
 								</Link>
 							</div>
 						</div>
@@ -57,7 +67,14 @@ const Category = () => {
 
 							<div className='card-footer'>
 								<Link to={"/products"}>
-									<button className='card-button'>Check It Out</button>
+									<button
+										className='card-button'
+										onClick={async () => {
+											await filterDispatch({ type: "CLEAR_ALL" });
+											filterDispatch({ type: "RUNNING" });
+										}}>
+										Check It Out
+									</button>
 								</Link>
 							</div>
 						</div>
@@ -83,7 +100,14 @@ const Category = () => {
 
 							<div className='card-footer'>
 								<Link to={"/products"}>
-									<button className='card-button'>Check It Out</button>
+									<button
+										className='card-button'
+										onClick={async () => {
+											await filterDispatch({ type: "CLEAR_ALL" });
+											filterDispatch({ type: "SB" });
+										}}>
+										Check It Out
+									</button>
 								</Link>
 							</div>
 						</div>

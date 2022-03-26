@@ -6,7 +6,7 @@ import { EmptyCart } from "./components/EmptyCart";
 import { CartCard } from "./components/CartCard";
 
 const Cart = () => {
-	const { addToCart, removeFromCart, changeCartQty, getCartState, cartState, isItemInCart } = useCart();
+	const { cartState } = useCart();
 	return (
 		<>
 			<Navbar />

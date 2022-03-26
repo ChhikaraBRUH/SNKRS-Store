@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
 
 	const { addToWishlist, removeFromWishlist, isItemWishlisted } = useWishlist();
 
-	const { addToCart, removeFromCart, changeCartQty, getCartState, cartState, isItemInCart } = useCart();
+	const { addToCart, isItemInCart } = useCart();
 
 	const { isAuth } = useAuth();
 	const navigate = useNavigate();

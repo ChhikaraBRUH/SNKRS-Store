@@ -4,7 +4,7 @@ import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
 const WishlistCard = ({ product }) => {
 	const { addToWishlist, removeFromWishlist, isItemWishlisted } = useWishlist();
-	const { addToCart, removeFromCart, changeCartQty, getCartState, cartState, isItemInCart } = useCart();
+	const { addToCart, isItemInCart } = useCart();
 
 	const itemInWishlist = isItemWishlisted(product);
 	const itemInCart = isItemInCart(product);
