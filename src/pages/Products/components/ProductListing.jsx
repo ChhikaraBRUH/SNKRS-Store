@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import { useFilter } from "../../../context/filter/filterContext";
 import { useProducts } from "../../../context/product/productsContext";
@@ -48,16 +47,9 @@ const ProductListing = () => {
 	const filteredProducts = getFilteredProducts(sortedProducts, filterState);
 
 	return (
-		<section class='product-cards'>
-			{filteredProducts.map((item) => (
-				<ProductCard
-					title={item.title}
-					categoryName={item.categoryName}
-					price={item.price}
-					img={item.img}
-					inStock={item.inStock}
-					rating={item.rating}
-				/>
+		<section className='product-cards'>
+			{filteredProducts.map((product) => (
+				<ProductCard product={product} key={product._id} />
 			))}
 		</section>
 	);
