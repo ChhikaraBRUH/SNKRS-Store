@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth/authContext";
 import { useWishlist } from "../../context/wishlist/wishlistContext";
 import { useCart } from "../../context/cart/cartContext";
+import { useFilter } from "../../context/filter/filterContext";
 
 const Navbar = () => {
 	const { isAuth } = useAuth();
 	const { wishlistState } = useWishlist();
 	const { cartState } = useCart();
+	const { filterDispatch } = useFilter();
 
 	return (
 		<>
@@ -26,6 +28,12 @@ const Navbar = () => {
 				</div>
 
 				<div className='right-nav'>
+					<div className='nav-link'>
+						<Link className='nav-heading' to={"/products"} onClick={() => filterDispatch({ type: "CLEAR_ALL" })}>
+							SHOP
+						</Link>
+					</div>
+
 					<div className='nav-link'>
 						{isAuth ? (
 							<Link className='nav-heading' to={"/logout"}>
