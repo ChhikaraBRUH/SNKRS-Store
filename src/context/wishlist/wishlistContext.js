@@ -33,7 +33,7 @@ const getWishlistContextValue = () => {
 		}
 	};
 
-	return { addToWishlist, removeFromWishlist, wishlistState, wishlistDispatch, isItemWishlisted };
+	return { addToWishlist, removeFromWishlist, wishlistState, isItemWishlisted };
 };
 
 const WishlistProvider = ({ children }) => {

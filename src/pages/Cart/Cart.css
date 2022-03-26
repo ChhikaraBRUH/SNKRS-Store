@@ -2,6 +2,12 @@
 
 @import "../main.css";
 
+/* Empty Cart Heading */
+
+.empty-cart-heading {
+	margin: 2rem 0rem;
+}
+
 /* Card Container */
 .card-container {
 	background-color: var(--white);

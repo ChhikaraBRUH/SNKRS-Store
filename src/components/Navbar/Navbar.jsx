@@ -3,10 +3,12 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth/authContext";
 import { useWishlist } from "../../context/wishlist/wishlistContext";
+import { useCart } from "../../context/cart/cartContext";
 
 const Navbar = () => {
 	const { isAuth } = useAuth();
 	const { wishlistState } = useWishlist();
+	const { cartState } = useCart();
 
 	return (
 		<>
@@ -53,7 +55,7 @@ const Navbar = () => {
 						<Link className='nav-heading' to={"/cart"}>
 							<div className='badge-div'>
 								<div className='material-icons-outlined md-36'>shopping_cart</div>
-								{isAuth ? <span className='badge-icon'>3</span> : null}
+								{isAuth ? cartState.totalItemsInCart > 0 ? <span className='badge-icon'>{cartState.totalItemsInCart}</span> : null : null}
 							</div>
 						</Link>
 					</div>
