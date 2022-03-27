@@ -24,7 +24,7 @@ const Login = () => {
 			setToken(response.data.encodedToken);
 			setIsAuth(true);
 			setLoading(false);
-			navigate("/");
+			navigate("/products");
 		} catch (err) {
 			console.error("error", err);
 			setError(true);

@@ -1,15 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth/authContext";
+import { useCart } from "../../context/cart/cartContext";
 import { useWishlist } from "../../context/wishlist/wishlistContext";
 import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
 	const { _id, title, categoryName, price, img, inStock, rating } = product;
+
 	const { addToWishlist, removeFromWishlist, isItemWishlisted } = useWishlist();
+
+	const { addToCart, isItemInCart } = useCart();
+
 	const { isAuth } = useAuth();
 	const navigate = useNavigate();
 	const itemInWishlist = isItemWishlisted(product);
+	const itemInCart = isItemInCart(product);
 
 	const wishlistToggle = async (product) => {
 		try {
@@ -49,11 +55,13 @@ const ProductCard = ({ product }) => {
 
 				<div className='card-footer'>
 					<div className='price'>Price: Rs.{price}</div>
-					<a href='#'>
-						<button id={inStock ? null : "out-of-stock-card-button"} className='card-button'>
-							{inStock ? "Add To Cart" : "Out Of Stock"}
-						</button>
-					</a>
+
+					<button
+						id={inStock ? null : "out-of-stock-card-button"}
+						className='card-button'
+						onClick={inStock ? (itemInCart ? () => navigate("/cart") : () => addToCart(product)) : null}>
+						{inStock ? (itemInCart ? "Go To Cart" : "Add To Cart") : "Out Of Stock"}
+					</button>
 				</div>
 			</div>
 		</div>
