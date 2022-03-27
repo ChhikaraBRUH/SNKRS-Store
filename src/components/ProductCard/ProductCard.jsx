@@ -59,7 +59,9 @@ const ProductCard = ({ product }) => {
 					<button
 						id={inStock ? null : "out-of-stock-card-button"}
 						className='card-button'
-						onClick={inStock ? (itemInCart ? () => navigate("/cart") : () => addToCart(product)) : null}>
+						onClick={
+							isAuth ? (inStock ? (itemInCart ? () => navigate("/cart") : () => addToCart(product)) : null) : () => navigate("/login")
+						}>
 						{inStock ? (itemInCart ? "Go To Cart" : "Add To Cart") : "Out Of Stock"}
 					</button>
 				</div>
